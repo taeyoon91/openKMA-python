@@ -4,7 +4,7 @@
 본 패키지는 **Python3**를 기반으로 편리하게 **기상청API** 사용할 목적으로 배포하였으며 데이터 사이언스 분야에 많이 활용되는 **Numpy** 와 **Pandas** 를 사용합니다. 서비스별 상세 가이드는 공공데이터 포털을 참고해주세요.
 
 (2023년 1월 28일 기준)
-* [동네예보 조회서비스(VilageFcstInfoService)](https://www.data.go.kr/data/15084084/openapi.do)
+* [동네예보 조회서비스(VilageFcstInfoService2.0)](https://www.data.go.kr/data/15084084/openapi.do)
 * [지상(종관, ASOS) 시간자료 조회서비스(AsosHourlyInfoService)](https://www.data.go.kr/data/15057210/openapi.do)
 * [지상(종관, ASOS) 일자료 조회서비스(AsosHourlyInfoService)](https://www.data.go.kr/data/15059093/openapi.do)
 
@@ -48,23 +48,28 @@
 
 # 설치방법
 ## 의존성 패키지
-**pip install requests** or **conda install -c conda-forge requests**  
-**pip install pandas** or **conda install -c conda-forge pandas**  
-**pip install lxml** or **conda install -c conda-forge lxml**  
-**pip install numpy** or **conda install -c conda-forge numpy**  
+***pip install requests*** or ***conda install -c conda-forge requests***  
+***pip install pandas*** or ***conda install -c conda-forge pandas***  
+***pip install lxml*** or ***conda install -c conda-forge lxml***  
+***pip install numpy*** or ***conda install -c conda-forge numpy***  
 
 ## openKMA 설치
-**pip install openKMA**
+***pip install openKMA***
 
 # 사용방법
-필요한 서비스 종류에 따라 from 을 사용해 해당 Class를 불러오실 것을 권장합니다.  
-예시) **from** openKMA **import** VilageFcstInfoService
 ## 사전준비
 ### API 인증키 발급
 [공공데이터 포털](https://Data.go.kr)에 가입해서 원하는 서비스에 대하여 활용신청을 합니다.  
 마이페이지에서 해당 서비스 정보를 확인하면 **"일반 인증키(Decoding)"** 항목이 표시됩니다.  
 일반 인증키는 API의 **ServiceKey**로 사용됩니다.
+## 서비스 사용방법
+필요한 서비스 종류에 따라 **from** 을 사용해 아래와 같이 해당 **class**를 불러오실 것을 권장합니다.  
 
+**from** openKMA **import** VilageFcstInfoService  
+KMA = VilageFcstInfoService("일반 인증키(Decoding)를 복사해 넣으세요")
+
+
+# 서비스 목록
 <details>
   <summary><strong>1. 예보정보 관련 서비스</strong></summary>
     
@@ -191,7 +196,7 @@ ___
 # 감사드리는 분
 부족하지만 항상 따뜻하게 대해주시고, 함께 고민해주시는 분들께 감사의 마음을 전합니다.
 + 충남대학교 천문우주학과 대기과학 교수님 및 연구원들
-+ 공주대학교 대기과학과 교수님 및 동기, 선배들
++ 공주대학교 대기과학과 교수님 및 동기, 선후배님들
 + 공주대학교 대기과학과 환경방 형님들
 + 대전지방기상청 아무개
 + 기상청 국가기후데이터센터 아무개
